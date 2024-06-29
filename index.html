@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документация по настройке системы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .toggle-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .hidden-content {
+            display: none;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        pre {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Документация по настройке системы</h1>
+
+    <button class="toggle-button" onclick="toggleContent('task2')">Задание 2: Настройка системы</button>
+    <div id="task2" class="hidden-content">
+        <h2>Настройка системы.</h2>
+        <p>Добавление пользователя в группу sudoers:</p>
+        <pre><code>sudo usermod -aG sudo ваш_пользователь</code></pre>
+
+        <p>Установка основных утилит:</p>
+        <pre><code>sudo apt-get update
+sudo apt-get install neofetch git curl wget -y</code></pre>
+
+        <p>Установка Visual Studio Code (VSCode):</p>
+        <pre><code>sudo snap install --classic code</code></pre>
+
+        <p>Установка Docker:</p>
+        <pre><code>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+sudo apt-get update
+
+sudo apt-get install docker-ce -y</code></pre>
+
+        <p>Установка MariaDB:</p>
+        <pre><code>sudo apt-get install mariadb-server -y</code></pre>
+    </div>
+
+    <button class="toggle-button" onclick="toggleContent('task3')">Задание 3: Настройка сервера баз данных MariaDB</button>
+    <div id="task3" class="hidden-content">
+        <h2>Настройка сервера баз данных MariaDB.</h2>
+        <pre><code>sudo systemctl start mariadb
+sudo mysql_secure_installation</code></pre>
+
+        <p>В процессе выполнения последней команды система попросит вас установить пароль для пользователя root, введите <strong>P@ssw0rd</strong>.</p>
+
+        <p>Создание базы данных и пользователя:</p>
+        <pre><code>sudo mysql -u root -p
+
+CREATE DATABASE Database1;
+GRANT ALL PRIVILEGES ON Database1.* TO 'root'@'localhost' IDENTIFIED BY 'P@ssw0rd';
+FLUSH PRIVILEGES;
+EXIT;</code></pre>
+    </div>
+</div>
+
+</body>
+</html>

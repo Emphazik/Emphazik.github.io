@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рассчет депозита по коленам</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Калькулятор депозита по коленам</h1>
+    <div class="form-group">
+        <label for="amount">Введите сумму депозита:</label>
+        <input type="number" id="amount" placeholder="Сумма" min="1" required>
+
+        <label for="currency">Выберите валюту:</label>
+        <select id="currency">
+            <option value="RUB">Рубль (₽)</option>
+            <option value="USD">Доллар ($)</option>
+            <option value="EUR">Евро (€)</option>
+        </select>
+
+        <label for="stages">Выберите количество колен:</label>
+        <input type="number" id="stages" min="1" max="8" value="1">
+    </div>
+
+    <button id="calculate-btn">Рассчитать</button>
+
+    <div id="results" class="results">
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

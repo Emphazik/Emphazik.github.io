@@ -5,21 +5,23 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Times New Roman', sans-serif;
+    color: #F8F8FF;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background:url("https://iq-study.com/wp-content/uploads/2020/12/grid_strategy.jpg");
 }
 
 .container {
-    background-color: #fff;
+    background-color: #ffffff10;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    border: 1px solid #000000;
 }
 
 h1 {
@@ -40,16 +42,19 @@ input, select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
+    background-color: #ffffff10;
     font-size: 16px;
+    color: #FFFAF0;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: rgba(0, 255, 79, 0.1);
+    color: #32CD32;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -68,8 +73,10 @@ button:hover {
 .result-item {
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #f1f1f1;
+    background-color: #ffffff10;
     border-radius: 5px;
+    text-align: center;
+    color: #FFFAF0;
 }
 
 .result-item span {
